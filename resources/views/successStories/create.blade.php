@@ -1,13 +1,18 @@
-<form action="{{ route('successStories.store') }}" method="POST">
-    @csrf
-    <label for="title">Title:</label>
-    <input type="text" name="title" required><br>
+@extends('layouts.master')
+@section('content')
 
-    <label for="story">Story:</label>
-    <textarea name="story" required></textarea><br>
+    <form action="{{ route('successStories.store') }}" method="POST">
+        @csrf
+        <label for="title">Title:</label>
+        <input type="text" name="title" required><br>
 
-    <label for="member_id">Member name:</label>
-    <input type="text" name="member_id" required><br>
+        <label for="story">Story:</label>
+        <textarea name="story" required></textarea><br>
 
-    <button type="submit">Add Story</button>
-</form>
+        <label for="member_id">Member name:</label>
+        <input type="text" name="member_id" required><br>
+
+        <button type="submit">Add Story</button>
+    </form>
+
+@endsection
