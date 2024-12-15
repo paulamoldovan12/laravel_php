@@ -1,12 +1,14 @@
 @extends('layouts.master')
 @section('content')
 
+
     <table>
         <thead>
         <tr>
             <th>Title</th>
             <th>Story</th>
-            <th>Member name</th>
+            <th>Member Name</th>
+            <th>Actions</th>
         </tr>
         </thead>
         <tbody>
@@ -18,7 +20,9 @@
                 <td>
                     <a href="{{ route('successStories.edit', $successStory->id) }}">Edit</a>
                     <form action="{{ route('successStories.destroy', $successStory->id) }}"
-                          method="POST" style="display: inline-block;">
+                          method="POST"
+                          style="display: inline-block;"
+                          onsubmit="return confirm('Are you sure you want to delete this member?');">
                         @csrf
                         @method('DELETE')
                         <button type="submit">Delete</button>
@@ -28,7 +32,6 @@
         @endforeach
         </tbody>
     </table>
-
     {{ $successStories->links() }}
 
 @endsection
