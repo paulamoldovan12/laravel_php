@@ -30,6 +30,12 @@ class SuccessStoryController extends Controller
         return view('successStories.index', compact('successStories'));
     }
 
+    public function edit($id)
+    {
+        $successStory = SuccessStory::findOrFail($id);
+        return view('successStories.edit', compact('successStory'));
+    }
+
     public function update(Request $request, $id)
     {
         $request->validate([

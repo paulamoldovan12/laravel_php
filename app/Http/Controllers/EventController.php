@@ -30,6 +30,12 @@ class EventController extends Controller
         return view('events.index', compact('events'));
     }
 
+    public function edit($id)
+    {
+        $event = Event::findOrFail($id);
+        return view('events.edit', compact('event'));
+    }
+
     public function update(Request $request, $id)
     {
         $request->validate([
