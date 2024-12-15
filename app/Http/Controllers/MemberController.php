@@ -83,8 +83,6 @@ class MemberController extends Controller
         return view('members.index', compact('members', 'search', 'professions', 'companies', 'statuses', 'profession', 'company', 'status'));
     }
 
-
-
     public function edit($id)
     {
         // Caută membrul în baza de date după ID
