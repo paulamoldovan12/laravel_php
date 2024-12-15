@@ -6,6 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content=" …">
     <title>Women TechPower</title>
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
     @include('partials.styles')
 </head>
 <body>
